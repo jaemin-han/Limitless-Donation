@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DonationLists from './DonationLists';
+
+const locations = [
+  { 
+    "id": "NY Common Pantry",
+    "name": "NY Common Pantry"
+  },
+  {
+    "id": "Father's Heart Ministries",
+    "name": "Father's Heart Ministries"
+  },
+  {
+    "id": "St. Joseph Soup Kitchen",
+    "name": "St. Joseph Soup Kitchen"
+  }
+]
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">#Limitless Donation</h1>
-        </header>
+      <div>
+        <DonationLists mockData={locations} />
       </div>
     );
   }
