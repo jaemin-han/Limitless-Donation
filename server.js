@@ -1,8 +1,8 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const config = require('./config')
-const orgData = require('./orgData')
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const config = require('./config');
+const orgData = require('./orgData');
 
 const app = express()
 
@@ -23,15 +23,15 @@ app.use((req, res, next) => {
       error: 'Error'
     })
   }
-})
+});
 
 app.get('/orgData', (req, res) => {
   res.send(orgData.get(req.token))
-})
+});
 
 app.delete('/orgData/:id', (req, res) => {
   res.send(orgData.remove(req.token, req.params.id))
-})
+});
 
 app.post('/orgData', bodyParser.json(), (req, res) => {
   const { name, email } = req.body
@@ -43,8 +43,8 @@ app.post('/orgData', bodyParser.json(), (req, res) => {
       error: 'Error! No Name and Email of the Organization'
     })
   }
-})
+});
 
 app.listen(config.port, () => {
   console.log('Server listening on port %s', config.port)
-})
+});
