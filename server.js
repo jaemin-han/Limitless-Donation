@@ -1,52 +1,50 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const config = require('./config');
-const orgData = require('./orgData');
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const config = require('./config')
+const orgData = require('./orgData')
 
-const app = express();
+const app = express()
 
 app.use(express.static('public'))
 app.use(cors())
 
 app.get('/', (req, res) => {
-    const help = `help`
-  
-    res.send(help)
-  })
+})
 
 app.use((req, res, next) => {
-    const token = req.get('Authorization');
+  const token = req.get('Authorization')
 
-    if (token) {
-        req.token = token
-        next()
-    } else {
-        res.status(403).send({
-            error: 'Error Error Error'
-        })
-    }
+  if (token) {
+    req.token = token
+    next()
+  } else {
+    res.status(403).send({
+      error: 'Error'
+    })
+  }
 })
 
 app.get('/orgData', (req, res) => {
-    res.send(orgData.get(req.token))
+  res.send(orgData.get(req.token))
 })
 
 app.delete('/orgData/:id', (req, res) => {
-    res.send(contacts.remove(req.token, req.params,id))
+  res.send(orgData.remove(req.token, req.params.id))
 })
 
 app.post('/orgData', bodyParser.json(), (req, res) => {
-    const { name, imageUrl } = req.body
-    if (name && imageUrl) {
-        res.send(orgData.add(req.token, req.body))
-    } else {
-        res.status(403).send({
-            error: 'Errrrror'
-        })
-    }
+  const { name, email } = req.body
+
+  if (name && email) {
+    res.send(orgData.add(req.token, req.body))
+  } else {
+    res.status(403).send({
+      error: 'Error! No Name and Email of the Organization'
+    })
+  }
 })
 
 app.listen(config.port, () => {
-    console.log('Server on port %s', config.port)
+  console.log('Server listening on port %s', config.port)
 })

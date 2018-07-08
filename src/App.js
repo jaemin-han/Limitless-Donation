@@ -1,29 +1,45 @@
 import React, { Component } from 'react';
 import DonationLists from './DonationLists';
 
-const locations = [
-  { 
-    'id': 'NY Common Pantry',
-    'name': 'NY Common Pantry',
-    'imageUrl': 'http://localhost:5001/commonpantry.png'
-  },
-  {
-    'id': 'Father\'s Heart Ministries',
-    'name': 'Father\'s Heart Ministries',
-    'imageUrl': 'http://localhost:5001/fathersheart.jpeg'
-  },
-  {
-    'id': 'St. Joseph Soup Kitchen',
-    'name': 'St. Joseph Soup Kitchen',
-    'imageUrl': 'http://localhost:5001/stjoseph.jpg'
-  }
-]
-
 class App extends Component {
+  state = {
+    locations: [
+      {
+        'id': 'commonpantry',
+        'name': 'NY Common Pantry',
+        'email': 'nycommonpantry@gmail.com',
+        'imageURL': 'http://localhost:5001/commonpantry.png'
+      },
+      {
+        'id': 'fathersheart',
+        'name': 'Father\'s Heart',
+        'email': 'fathersheart@gmail.com',
+        'imageURL': 'http://localhost:5001/fathersheart.jpeg'
+      },
+      {
+        'id': 'stjoseph',
+        'name': 'St. Joseph',
+        'email': 'stjoseph@gmail.com',
+        'imageURL': "http://localhost:5001/stjoseph.jpg"
+      }
+    ]
+  }
+
+  removeLocation = (location) => {
+    this.setState((currentState) => ({
+      locations: currentState.locations.filter((c) => {
+        return c.id !== location.id
+      })
+    }))
+  }
   render() {
     return (
       <div>
-        <DonationLists mockData={locations} />
+        <DonationLists 
+          locations={this.state.locations}
+          onDeleteLocation={this.removeLocation}
+        />
+          
       </div>
     );
   }

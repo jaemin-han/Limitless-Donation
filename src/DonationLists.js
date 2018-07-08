@@ -1,24 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-class DonationLists extends React.Component {
-    render() {
-        console.log('props', this.props)
-        return (
-            <ol>
-                {this.props.mockData.map((location) => (
-                    <li className='donation' key={location.id}>
-                        <div style={{ backgroundImage: `url(${location.avatarURL})` }}>
-
-                        </div>
-                        <div>
-                            {location.name}
-                            {/* {location.imageUrl} */}
-                        </div>
-                    </li>
-                ))}
-            </ol>
-        )    
-    }
+function DonationLists (props) {
+    return (
+        <ol className="charity-list">
+            {props.locations.map((location) => (
+                <li key={location.id} className='charity-list-item'>
+                    <div
+                        className='org-image'
+                        style={{
+                            backgroundImage: `url(${location.imageURL})`
+                        }}
+                    ></div>
+                    <div className='organization-details'>
+                        <p>{location.name}</p>
+                        <p>{location.email}</p>
+                    </div>
+                    <button 
+                        onClick={() => props.onDeleteLocation(location)}
+                        className='organiation-remove'>
+                            Remove
+                    </button>
+                </li>
+            ))}
+        </ol>
+    )
 }
 
-export default DonationLists;
+DonationLists.propTypes = {
+    locations: PropTypes.array.isRequired,
+    onDeleteLocation: PropTypes.func.isRequired
+}
+
+export default DonationLists
