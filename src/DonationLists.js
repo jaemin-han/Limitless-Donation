@@ -36,18 +36,18 @@ class DonationLists extends Component {
         return (
             <div>
                 {/* {JSON.stringify(this.state)} */}
-                <div className=''>
+                <div className='list-organization-top'>
                     <input
-                        className="search-contacts"
+                        className="search-organizations"
                         type="text"
-                        placeholder="Search Contacts"
+                        placeholder="Click to search your organization"
                         value={search}
                         onChange={(event) => this.updateSearch(event.target.value)}
                     />
                 </div>
 
                 {showingAllOrganization.length !== locations.length && (
-                    <div>
+                    <div className="show-all-organization">
                         <span>Now showing {showingAllOrganization.length} of {locations.length}</span>
                         <button onClick={this.clearSearch}>Show All Locations</button>
                     </div>

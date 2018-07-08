@@ -35,6 +35,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <span className="logo">#Limitless Donation</span>
         <DonationLists 
           locations={this.state.locations}
           onDeleteLocation={this.removeLocation}
