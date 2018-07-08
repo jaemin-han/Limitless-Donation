@@ -8,6 +8,7 @@ class DonationLists extends Component {
         onDeleteLocation: PropTypes.func.isRequired
     }
     
+    // Babel will transpile and add a constructor behind the scene
     state = {
         search: ''
     }
@@ -17,6 +18,11 @@ class DonationLists extends Component {
             search: search.trim()
         }))
     }
+
+    clearSearch = () => {
+        this.updateSearch('')
+    }
+
     render() {
         const { search } = this.state
         const { locations, onDeleteLocation } = this.props
@@ -39,10 +45,15 @@ class DonationLists extends Component {
                         onChange={(event) => this.updateSearch(event.target.value)}
                     />
                 </div>
-                <div className='charity-list'>
-                
 
-                    
+                {showingAllOrganization.length !== locations.length && (
+                    <div>
+                        <span>Now showing {showingAllOrganization.length} of {locations.length}</span>
+                        <button onClick={this.clearSearch}>Show All Locations</button>
+                    </div>
+                )}
+
+                <div className='charity-list'>
                     {showingAllOrganization.map((location) => (
                         <li key={location.id} className='charity-list-item'>
                             <div
@@ -64,7 +75,6 @@ class DonationLists extends Component {
                     ))}
                 </div>
             </div>
-
         )
     }
 }
