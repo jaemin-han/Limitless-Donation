@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class DonationLists extends Component {
     //PropTypes to a class Component
@@ -45,6 +46,12 @@ class DonationLists extends Component {
                         onChange={(event) => this.updateSearch(event.target.value)}
                     />
                 </div>
+                <div>
+                    <Link
+                        to='/create'
+                        className='new-organization'
+                    >Add Location</Link>
+                </div>
 
                 {showingAllOrganization.length !== locations.length && (
                     <div className="show-all-organization">
@@ -79,4 +86,4 @@ class DonationLists extends Component {
     }
 }
 
-export default DonationLists
+export default DonationLists;

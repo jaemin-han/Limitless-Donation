@@ -56,6 +56,13 @@ body, .app {
     .show-all-organization button:hover {
       text-decoration: underline; }
 
+.new-organization {
+  display: block;
+  width: 150px;
+  background: white;
+  background-repeat: no-repeat;
+  background-position: center; }
+
 .charity-list {
   display: flex;
   flex-wrap: wrap;

@@ -9,19 +9,19 @@ const defaultData = {
       id: 'commonpantry',
       name: 'NY Common Pantry',
       email: 'nycommonpantry@gmail.com',
-      avatarURL: config.origin + '/commonpantry.png'
+      imageURL: config.origin + '/commonpantry.png'
     },
     {
       id: 'fathersheart',
       name: 'Father\'s Heart',
       email: 'fathersheart@gmail.com',
-      avatarURL: config.origin + '/fathersheart.jpeg'
+      imageURL: config.origin + '/fathersheart.jpeg'
     },
     {
       id: 'stjoseph',
       name: 'St. Joseph',
       email: 'stjoseph@gmail.com',
-      avatarURL: config.origin + '/stjoseph.jpg'
+      imageURL: config.origin + '/stjoseph.jpg'
     }
   ]
 }
