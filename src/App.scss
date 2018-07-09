@@ -78,8 +78,6 @@ body, .app {
   }
 }
 
-
-
 .search-organizations {
   width: 50%;
   text-align: center;
@@ -119,8 +117,6 @@ body, .app {
     } 
   }
 }
-
-
 
 .charity-list {
   display: flex;
@@ -180,7 +176,8 @@ body, .app {
   width: 32px;
   height: 32px;
   background-color: transparent;
-  background-image: url('./icons/cancel.svg');
+  // Icon made by 'Free UI' from www.flaticon.com
+  background-image: url('./icons/delete-button.svg');
   background-size: 100% 100%;
   border: 0;
   color: black;
@@ -189,3 +186,69 @@ body, .app {
   cursor: pointer;
   outline: none;
 }
+
+.return-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  // Icon made by 'Roundicons' from www.flaticon.com
+  background-image: url('./icons/left-arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  font-size: 0;
+}
+
+.create-new-organization {
+  padding: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+
+  .create-title {
+    display: flex;
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      max-width: 400px;
+    }
+  
+    .new-heart {
+      min-width: 20px;
+      height: 20px;
+      // Icon made by 'Freepik' from www.flaticon.com
+      background-image: url('./icons/like.svg');
+      background-size: 20px 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+    }
+  }
+
+  .create-input-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 30px;
+    }
+  }
+}
+
+.image-upload {
+  min-width: 30px;
+  height: 300px;
+  background-color: $color-white;
+  // Icon made by 'Freepik' from www.flaticon.com
+  background-image: url('./icons/heart.svg');
+  background-size: 100px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+

@@ -26,8 +26,7 @@ class App extends Component {
     //     'imageURL': "http://localhost:5001/stjoseph.jpg"
     //   }
     // ]
-    locations: [],
-    screen: 'list'
+    locations: []
   }
 
   componentDidMount() {
@@ -49,6 +48,15 @@ class App extends Component {
     LocationsAPI.remove(location)
   }
 
+  createLocation = (location) => {
+    LocationsAPI.create(location)
+    .then((location) => {
+      this.setState((currentState) => ({
+        locations: currentState.locations.concat([location])
+      }))
+    })
+  }
+
   render() {
     return (
       <div>
@@ -58,16 +66,23 @@ class App extends Component {
           <DonationLists 
             locations={this.state.locations}
             onDeleteLocation={this.removeLocation}
-            onNavigate={() => {
-              this.setState(() => ({
-                screen: 'create'
-              }))
-            }}
+            // onNavigate={() => {
+            //   this.setState(() => ({
+            //     screen: 'create'
+            //   }))
+            // }}
           />
         )}
         />
 
-        <Route path='/create' component={AddNewLocation}/>
+        <Route path='/create' render={({ history }) => (
+          <AddNewLocation
+            NewLocation={( location ) => {
+              this.createLocation(location)
+              history.push('/')
+            }}
+          />
+        )}/>
       </div>
     );
   }

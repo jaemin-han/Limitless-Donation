@@ -122,7 +122,7 @@ body, .app {
   width: 32px;
   height: 32px;
   background-color: transparent;
-  background-image: url("./icons/cancel.svg");
+  background-image: url("./icons/delete-button.svg");
   background-size: 100% 100%;
   border: 0;
   color: black;
@@ -130,3 +130,50 @@ body, .app {
   vertical-align: middle;
   cursor: pointer;
   outline: none; }
+
+.return-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("./icons/left-arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  font-size: 0; }
+
+.create-new-organization {
+  padding: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto; }
+  .create-new-organization .create-title {
+    display: flex; }
+    .create-new-organization .create-title h2 {
+      font-size: 20px;
+      text-align: center;
+      max-width: 400px; }
+    .create-new-organization .create-title .new-heart {
+      min-width: 20px;
+      height: 20px;
+      background-image: url("./icons/like.svg");
+      background-size: 20px 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 8px; }
+  .create-new-organization .create-input-form {
+    display: flex;
+    flex-direction: column; }
+    .create-new-organization .create-input-form input {
+      margin-top: 20px; }
+    .create-new-organization .create-input-form button {
+      margin-top: 30px; }
+
+.image-upload {
+  min-width: 30px;
+  height: 300px;
+  background-color: #ffffff;
+  background-image: url("./icons/heart.svg");
+  background-size: 100px 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px; }

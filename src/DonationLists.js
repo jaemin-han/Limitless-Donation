@@ -1,8 +1,8 @@
-import React, { Component }from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class DonationLists extends Component {
+class DonationLists extends React.Component {
     //PropTypes to a class Component
     static propTypes = {
         locations: PropTypes.array.isRequired,
