@@ -46,12 +46,17 @@ class DonationLists extends Component {
                         onChange={(event) => this.updateSearch(event.target.value)}
                     />
                 </div>
-                <div>
-                    <Link
-                        to='/create'
-                        className='new-organization'
-                    >Add Location</Link>
+                <div className='list-organization-middle'>
+                    <div className='button-items'>
+                        <p className='new-organization'>Modal Message</p>
+                    </div>
+                    <div className='button-items'>
+                        <Link to='/create'>
+                            <p className='new-organization'>Add Location</p>
+                        </Link>
+                    </div>
                 </div>
+
 
                 {showingAllOrganization.length !== locations.length && (
                     <div className="show-all-organization">
