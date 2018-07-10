@@ -163,10 +163,22 @@ body, .app {
   .create-new-organization .create-input-form {
     display: flex;
     flex-direction: column; }
-    .create-new-organization .create-input-form input {
+    .create-new-organization .create-input-form span {
       margin-top: 20px; }
+    .create-new-organization .create-input-form input {
+      margin-top: 5px;
+      padding: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none; }
     .create-new-organization .create-input-form button {
-      margin-top: 30px; }
+      margin-top: 25px;
+      padding: 20px;
+      background: tomato;
+      font-size: 16px;
+      border-radius: 8px;
+      font-family: "Montserrat", Arial, sans-serif;
+      cursor: pointer; }
 
 .image-upload {
   min-width: 30px;

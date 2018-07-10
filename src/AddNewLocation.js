@@ -21,18 +21,24 @@ class AddNewLocation extends React.Component {
                     to='/'>
                     Go Back
                 </Link>
+                
                 <form onSubmit={this.handleSubmit}className='create-new-organization'>
-                <div className='create-title'>
-                    <h2>New Charitable Organization</h2>
-                    <p className='new-heart'></p>
-                </div>
+                
+                    <div className='create-title'>
+                        <h2>New Charitable Organization</h2>
+                        <p className='new-heart'></p>
+                    </div>
+
                     <ImageUpload
                         className='image-upload'
                         name='imageURL'
                         maxHeight={100}
                     />
+
                     <div className='create-input-form'>
+                        <span>Name:</span>
                         <input type='text' name='name' placeholder='Organization'/>
+                        <span>Email:</span>
                         <input type='text' name='email' placeholder='Email'/>
                         <button>Add Organization</button>
                     </div>

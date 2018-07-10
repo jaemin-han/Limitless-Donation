@@ -16,6 +16,8 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 
+$border-raius-regular: 8px;
+
 // Default Style Start
 html {
   box-sizing: border-box;
@@ -230,12 +232,26 @@ body, .app {
     display: flex;
     flex-direction: column;
 
-    input {
+    span {
       margin-top: 20px;
     }
 
+    input {
+      margin-top: 5px;
+      padding: 20px;
+      font-size: 16px;
+      border-radius: $border-raius-regular;
+      border: none;
+    }
+
     button {
-      margin-top: 30px;
+      margin-top: 25px;
+      padding: 20px;
+      background: $color-tomato;
+      font-size: 16px;
+      border-radius: $border-raius-regular;
+      font-family: $font-family-heading;
+      cursor: pointer; 
     }
   }
 }
