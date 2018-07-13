@@ -34,9 +34,9 @@ app.delete('/orgData/:id', (req, res) => {
 });
 
 app.post('/orgData', bodyParser.json(), (req, res) => {
-  const { name, email } = req.body
+  const { name, email, imageURL, description, fruit, fruitcount} = req.body
 
-  if (name && email) {
+  if (name && email && imageURL && description && fruit && fruitcount) {
     res.send(orgData.add(req.token, req.body))
   } else {
     res.status(403).send({

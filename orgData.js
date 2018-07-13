@@ -9,19 +9,28 @@ const defaultData = {
       id: 'commonpantry',
       name: 'NY Common Pantry',
       email: 'nycommonpantry@gmail.com',
-      imageURL: config.origin + '/commonpantry.png'
+      imageURL: config.origin + '/commonpantry.png',
+      description: 'Testing one two three',
+      fruit:'Banana',
+      fruitcount: 122
     },
     {
       id: 'fathersheart',
       name: 'Father\'s Heart',
       email: 'fathersheart@gmail.com',
-      imageURL: config.origin + '/fathersheart.jpeg'
+      imageURL: config.origin + '/fathersheart.jpeg',
+      description: 'Testing four five six',
+      fruit:'Orange',
+      fruitcount: 42
     },
     {
       id: 'stjoseph',
       name: 'St. Joseph',
       email: 'stjoseph@gmail.com',
-      imageURL: config.origin + '/stjoseph.jpg'
+      imageURL: config.origin + '/stjoseph.jpg',
+      description: 'Testing seven eight nine',
+      fruit:'Apple',
+      fruitcount: 532
     }
   ]
 }

@@ -25,21 +25,45 @@ class AddNewLocation extends React.Component {
                 <form onSubmit={this.handleSubmit}className='create-new-organization'>
                 
                     <div className='create-title'>
-                        <h2>New Charitable Organization</h2>
+                        <h2>New Charitable Organization</h2> 
                         <p className='new-heart'></p>
                     </div>
 
-                    <ImageUpload
-                        className='image-upload'
-                        name='imageURL'
-                        maxHeight={100}
-                    />
+                    <div>
+                        <span>Click the icon to upload a photo:</span>
+                        <ImageUpload
+                            className='image-upload'
+                            name='imageURL'
+                            maxHeight={100}
+                        />
+                    </div>
+
 
                     <div className='create-input-form'>
                         <span>Name:</span>
                         <input type='text' name='name' placeholder='Organization'/>
                         <span>Email:</span>
                         <input type='text' name='email' placeholder='Email'/>
+                        <span>Description:</span>
+                        <input type='text' name='description' placeholder='Description'/>
+                        <div className='test'>
+                            <select name='fruit'>
+                                <option value='select'>select</option>
+                                <option value='banana'>Banana</option>
+                                <option value='apple'>Apple</option>
+                                <option value='peach'>Peach</option>
+                                <option value='orange'>Orange</option>
+                            </select>
+                            <input type='number' name='fruitcount' placeholder='Amount'/>
+                        </div>
+
+
+                        {/* <form name='fruitoption'>
+                            <input type='checkbox' value='apple'/>Apple
+                            <input type='checkbox' value='orange'/>Orange
+                            <input type='checkbox' value='banana'/>Banana
+                        </form> */}
+
                         <button>Add Organization</button>
                     </div>
                 </form>

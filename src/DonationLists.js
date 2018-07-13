@@ -57,7 +57,6 @@ class DonationLists extends React.Component {
                     </div>
                 </div>
 
-
                 {showingAllOrganization.length !== locations.length && (
                     <div className="show-all-organization">
                         <span>Now showing {showingAllOrganization.length} of {locations.length}</span>
@@ -75,8 +74,13 @@ class DonationLists extends React.Component {
                                 }}
                             ></div>
                             <div className='organization-details'>
-                                <p>{location.name}</p>
-                                <p>{location.email}</p>
+                                <p><strong>Name:</strong> {location.name}</p>
+                                <p><strong>Email:</strong> {location.email}</p>
+                                <p><strong>Description:</strong> {location.description}</p>
+                                <div className='test'>
+                                    <p><strong>Fruit Type:</strong> {location.fruit}</p>
+                                    <p><strong style={{ paddingLeft: '5px'  }}>Count:</strong> {location.fruitcount}</p>
+                                </div>
                             </div>
                             <button 
                                 onClick={() => onDeleteLocation(location)}

@@ -6,26 +6,6 @@ import { Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
-    // locations: [
-    //   {
-    //     'id': 'commonpantry',
-    //     'name': 'NY Common Pantry',
-    //     'email': 'nycommonpantry@gmail.com',
-    //     'imageURL': 'http://localhost:5001/commonpantry.png'
-    //   },
-    //   {
-    //     'id': 'fathersheart',
-    //     'name': 'Father\'s Heart',
-    //     'email': 'fathersheart@gmail.com',
-    //     'imageURL': 'http://localhost:5001/fathersheart.jpeg'
-    //   },
-    //   {
-    //     'id': 'stjoseph',
-    //     'name': 'St. Joseph',
-    //     'email': 'stjoseph@gmail.com',
-    //     'imageURL': "http://localhost:5001/stjoseph.jpg"
-    //   }
-    // ]
     locations: []
   }
 
@@ -66,11 +46,6 @@ class App extends Component {
           <DonationLists 
             locations={this.state.locations}
             onDeleteLocation={this.removeLocation}
-            // onNavigate={() => {
-            //   this.setState(() => ({
-            //     screen: 'create'
-            //   }))
-            // }}
           />
         )}
         />
