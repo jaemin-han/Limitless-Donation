@@ -19,9 +19,15 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "start": "react-scripts start && node server.js && npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "react-scripts start",
+    "node": "node server.js",
+    "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run start\" \"npm run node\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
   }
 }

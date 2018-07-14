@@ -79,7 +79,7 @@ class DonationLists extends React.Component {
                                 <p><strong>Description:</strong> {location.description}</p>
                                 <div className='test'>
                                     <p><strong>Fruit Type:</strong> {location.fruit}</p>
-                                    <p><strong style={{ paddingLeft: '5px'  }}>Count:</strong> {location.fruitcount}</p>
+                                    <p><strong style={{ paddingLeft: '5px' }}>Count:</strong> {location.fruitcount}</p>
                                 </div>
                             </div>
                             <button 
