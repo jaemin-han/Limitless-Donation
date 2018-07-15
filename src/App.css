@@ -148,7 +148,6 @@ a {
   font-size: 0; }
 
 .create-new-organization {
-  padding: 20px;
   max-width: 400px;
   max-height: 400px;
   margin: 0 auto; }
@@ -175,7 +174,6 @@ a {
     .create-new-organization .create-input-form span {
       margin-top: 20px; }
     .create-new-organization .create-input-form input {
-      margin-top: 5px;
       padding: 20px;
       font-size: 16px;
       border-radius: 8px;
@@ -201,5 +199,14 @@ a {
   border-radius: 8px;
   cursor: pointer; }
 
-.test {
-  display: flex; }
+.fruit-container {
+  display: inline-flex; }
+  .fruit-container select {
+    font-family: "Montserrat", Arial, sans-serif;
+    height: 57px;
+    width: 90px;
+    font-size: 14px;
+    border: none;
+    margin-right: 10px; }
+  .fruit-container input {
+    width: 300px; }

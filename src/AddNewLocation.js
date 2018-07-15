@@ -46,7 +46,8 @@ class AddNewLocation extends React.Component {
                         <input type='text' name='email' placeholder='Email'/>
                         <span>Description:</span>
                         <input type='text' name='description' placeholder='Description'/>
-                        <div className='test'>
+                        <span>Selection:</span>
+                        <div className='fruit-container'>
                             <select name='fruit'>
                                 <option value='select'>select</option>
                                 <option value='banana'>Banana</option>
@@ -54,7 +55,7 @@ class AddNewLocation extends React.Component {
                                 <option value='peach'>Peach</option>
                                 <option value='orange'>Orange</option>
                             </select>
-                            <input type='number' name='fruitcount' placeholder='Amount'/>
+                            <input className='fruit-amount' type='number' name='fruitcount' placeholder='Amount'/>
                         </div>
 
 

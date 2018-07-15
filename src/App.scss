@@ -213,7 +213,6 @@ a {
 }
 
 .create-new-organization {
-  padding: 20px;
   max-width: 400px;
   max-height: 400px;
   margin: 0 auto;
@@ -251,7 +250,7 @@ a {
     }
 
     input {
-      margin-top: 5px;
+      // margin-top: 5px;
       padding: 20px;
       font-size: 16px;
       border-radius: $border-raius-regular;
@@ -284,6 +283,20 @@ a {
   cursor: pointer;
 }
 
-.test {
-  display: flex;
+.fruit-container {
+  display: inline-flex;
+
+    select {
+      font-family: $font-family-heading; 
+      height: 57px;
+      width: 90px;
+      // text-align: center;
+      font-size: 14px;
+      border: none;
+      margin-right: 10px; 
+    }
+  
+    input {
+      width: 300px;
+    }
 }
