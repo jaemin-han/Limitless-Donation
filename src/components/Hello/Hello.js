@@ -1,3 +1,5 @@
+// This component is for TESTING PURPOSES (Enzyme)
+
 import React from 'react';
 import PropTypes from 'prop-types';
 

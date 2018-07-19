@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImageUpload from './ImageUpload';
+import ImageUpload from '../ImageUpload/ImageUpload';
 import serializeForm from 'form-serialize';
 
 class AddNewLocation extends React.Component {

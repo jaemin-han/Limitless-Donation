@@ -1,3 +1,5 @@
+// Just testing clock react method - not connected to any files
+
 import React from 'react';
 
 class Clock extends React.Component {
@@ -36,7 +38,7 @@ class Clock extends React.Component {
 
     render() {
         const {hours, minutes, seconds, ampm } = this.state;
-        
+
         return (
             <div>
                 {

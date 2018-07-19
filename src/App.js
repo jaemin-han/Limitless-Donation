@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import DonationLists from './DonationLists';
-import Clock from './Clock/Clock';
+import DonationLists from './components/DonationLists/DonationLists';
+// import Clock from './components/Clock/Clock';
 import * as LocationsAPI from './router/LocationsAPI';
-import AddNewLocation from './AddNewLocation';
+import AddNewLocation from './components/AddNewLocation/AddNewLocation';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -60,7 +60,7 @@ class App extends Component {
           />
         )}/>
 
-        <Clock />
+        {/* <Clock /> */}
       </div>
     );
   }
