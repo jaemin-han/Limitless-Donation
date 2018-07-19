@@ -39,9 +39,9 @@ class DonationLists extends React.Component {
                 {/* {JSON.stringify(this.state)} */}
                 <div className='list-organization-top'>
                     <input
-                        className="search-organizations"
-                        type="text"
-                        placeholder="Click to search your organization"
+                        className='search-organizations'
+                        type='text'
+                        placeholder='Click to search your organization'
                         value={search}
                         onChange={(event) => this.updateSearch(event.target.value)}
                     />
@@ -58,7 +58,7 @@ class DonationLists extends React.Component {
                 </div>
 
                 {showingAllOrganization.length !== locations.length && (
-                    <div className="show-all-organization">
+                    <div className='show-all-organization'>
                         <span>Now showing {showingAllOrganization.length} of {locations.length}</span>
                         <button onClick={this.clearSearch}>Show All Locations</button>
                     </div>

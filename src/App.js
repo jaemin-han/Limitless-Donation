@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import DonationLists from './components/DonationLists/DonationLists';
+import Container from './containers/TimeLine';
 // import Clock from './components/Clock/Clock';
 import * as LocationsAPI from './router/LocationsAPI';
 import AddNewLocation from './components/AddNewLocation/AddNewLocation';
+import 'font-awesome/css/font-awesome.css';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -59,7 +61,8 @@ class App extends Component {
             }}
           />
         )}/>
-
+        
+        <Container />
         {/* <Clock /> */}
       </div>
     );
