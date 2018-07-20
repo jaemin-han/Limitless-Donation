@@ -28,11 +28,11 @@ class Timeline extends React.Component {
             <div className='notificationsFrame'>
                 <div className='panel'>
                     <Header/>
-                    <Content
+                    {/* <Content
                         onComponentRefresh={this.onComponentRefresh.bind(this)}
                         requestRefresh={refreshing}
                         fetchData={fetchEvent}
-                    />
+                    /> */}
                     <Footer>
                         <button onClick={this.refresh.bind(this)}>
                             Refresh

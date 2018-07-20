@@ -19,7 +19,7 @@ class Header extends React.Component {
     }
 
     render() {
-        // Classes to add to the <input /> element
+        // Classes to add t`o the <input /> element
         let searchInputClasses = ['SearchInput'];
 
         // Update the class arry if the state is visible
@@ -34,18 +34,17 @@ class Header extends React.Component {
                     <div className='dashBottom'></div>
                     <div className='circle'></div>
                 </div>
-                <div className='fa fa-more'></div>
+                {/* <div className='fa fa-more'></div> */}
 
+                <SearchForm
+                    searchVisible={this.state.searchVisible}
+                    onSubmit={this.props.onSubmit}
+                />
                 <span className='title'>
                     {this.props.title}
                 </span>
 
-                <input
-                    type='text'
-                    className={searchInputClasses.join(' ')}
-                    // className='SearchInput active'
-                    placeholder='Search ...'
-                />
+
 
                 {/* Adding an onClick handler to call the showSearch button */}
                 <div 
@@ -58,7 +57,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    title: PropTypes.string
+    // title: PropTypes.string
+    onSearch: PropTypes.func
 }
 
 Header.defaultProps = {
