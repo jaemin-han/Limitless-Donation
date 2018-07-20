@@ -27,7 +27,7 @@ class Timeline extends React.Component {
         return (
             <div className='notificationsFrame'>
                 <div className='panel'>
-                    <Header title='Activity Tracker' />
+                    <Header/>
                     <Content
                         onComponentRefresh={this.onComponentRefresh.bind(this)}
                         requestRefresh={refreshing}
