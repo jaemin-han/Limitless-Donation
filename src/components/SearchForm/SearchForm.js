@@ -46,7 +46,7 @@ class SearchForm extends React.Component {
             {/* className='header' */}
                 <input
                     type='search'
-                    // value={this.state.searchText}
+                    value={this.state.searchText}
                     className={searchClasses.join(' ')}
                     onChange={this.updateSearchInput.bind(this)}
                     placeholder='Search'
