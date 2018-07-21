@@ -1,0 +1,24 @@
+@media (max-width: 1662px) {
+    .contact-list {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1000px){
+    .clock {
+        font-size: 50px;
+    }
+  }
+  
+@media only screen and (min-width: 500px) and (max-width: 699px){
+    .clock {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 499px){
+    .clock {
+        font-size: 40px;
+    }
+}

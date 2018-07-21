@@ -2,18 +2,17 @@
     z-index: 2;
     width: 100%;
     top: 20px;
-    background: #fff;
-    border-radius: 3px;
+    background: $color-white;
+    border-radius: $border-raius-regular;
     overflow: hidden;
     font-family: 'Open Sans', Helvetica, sans-serif;
     margin-bottom: 40px;
-  }
-  
-  .notificationsFrame.show-menu {
-    transform: translate3d(150px, 0, 0);
-  }
-  
-  .notificationsFrame .searchInput {
+
+    &.show-menu {
+      transform: translate3d(150px, 0, 0);
+    }
+
+  .searchInput {
     border: 10px solid red;
     box-sizing: border-box;
     position: absolute;
@@ -23,7 +22,7 @@
     height: 34px;
     border-radius: 17px;
     border: none;
-    background: #fff;
+    background: $color-white;
     padding: 0 17px;
     font-size: 13px;
     color: #666;
@@ -31,64 +30,58 @@
     transform: translateX(15px);
     opacity: 0;
     pointer-events: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
   }
   
-  .notificationsFrame .searchInput:focus {
-    outline: none;
-  }
-  
-  .notificationsFrame .searchInput.active {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: all;
-  }
-  
-  .notificationsFrame .header {
+  .header {
     position: relative;
     height: 60px;
     background: #5f98cd;
     padding-top: 0;
-  }
   
-  .notificationsFrame .header .menuIcon {
+  .menuIcon {
     position: absolute;
     width: 29px;
     height: 15px;
     top: 23px;
     left: 20px;
     cursor: pointer;
-  }
   
-  .notificationsFrame .header .menuIcon:hover .dashTop, .notificationsFrame .header .menuIcon:hover .dashBottom, .notificationsFrame .header .menuIcon:hover .circle {
-    background: #fff;
-  }
-  
-  .notificationsFrame .header .menuIcon .dashTop {
+  .dashTop {
     position: absolute;
     width: 20px;
     height: 3px;
     top: 0;
     left: 0;
     background: #b2daff;
-    border-radius: 3px;
+    border-radius: $border-raius-regular;
     transition: all 0.2s ease-in-out;
   }
   
-  .notificationsFrame .header .menuIcon .dashBottom {
+  .dashBottom {
     position: absolute;
     width: 20px;
     height: 3px;
     top: 0;
     left: 0;
     background: #b2daff;
-    border-radius: 3px;
+    border-radius: $border-raius-regular;
     transition: all 0.2s ease-in-out;
     width: 29px;
     top: auto;
     bottom: 0;
   }
   
-  .notificationsFrame .header .menuIcon .circle {
+  .circle {
     position: absolute;
     height: 7px;
     width: 7px;
@@ -98,38 +91,42 @@
     background: #b2daff;
     transition: all 0.2s ease-in-out;
   }
-  
-  .notificationsFrame .header .title {
+
+  &:hover .dashTop, &:hover .dashBottom, &:hover .circle {
+    background: $color-white;
+  }
+}
+  .title {
     display: block;
     text-align: center;
-    color: #fff;
+    color: $color-white;
     font-weight: 600;
     font-size: 15px;
     padding-top: 20px;
   }
   
-  .notificationsFrame .header .searchIcon {
+  .searchIcon {
     position: absolute;
     z-index: 3;
     font-size: 21px;
-    color: #fff;
+    color: $color-white;
     top: 18px;
     right: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
+
+    &:hover {
+      color: $color-white;
+    }
   }
-  
-  .notificationsFrame .header .searchIcon:hover {
-    color: #fff;
-  }
-  
-  .notificationsFrame .content {
+}
+  .content {
     position: relative;
     height: 100%;
     overflow: hidden;
-  }
   
-  .notificationsFrame .content .line {
+  
+  .line {
     position: absolute;
     top: 0;
     left: 40px;
@@ -138,147 +135,122 @@
     background: #ebebeb;
   }
   
-  .notificationsFrame .content .item {
+  .item {
     position: relative;
     z-index: 2;
     margin: 20px 30px 30px 70px;
     display: block;
-    /*border-radius: 50%;
-     border: 5px solid #ecf0f1;
-     box-sizing: border-box;
-     position: absolute;
-     height: 20px;
-     width: 20px;
-     background: #fff;
-     border: 2px solid #5F98CD;
-     box-shadow: 0 0 0 3px #fff;*/
-  }
+
+    &:hover {
+      color: #5f98cd;
+      cursor: pointer;
+    }
+
+    .circle {
+      box-sizing: border-box;
+      position: absolute;
+      height: 11px;
+      width: 11px;
+      background: $color-white;
+      border: 2px solid #5f98cd;
+      box-shadow: 0 0 0 3px $color-white;
+      border-radius: 6px;
+      top: 0;
+      left: -20px;
+    }
+    
+    .avatar {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      vertical-align: top;
+      overflow: hidden;
+      left: -49px;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .time {
+      display: block;
+      font-size: 11px;
+      line-height: 11px;
+      margin-bottom: 2px;
+    }
+    
+    p {
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0px 40px 0px 0px;
+      font-family: 'Open Sans', Lora, Times, no-serif;
+
+      b {
+        font-weight: 600;
+      }
+    }
+    
+    .right {
+      position: absolute;
+      right: 5px;
+      font-size: 11px;
+      top: 11px;
+    }
+    
+    .commentCount {
+      position: absolute;
+      right: 15px;
+      font-size: 12px;
+      top: 11px;
+
+      &:after {
+        content: "\f075";
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 20px;
+        color: #ebebeb;
+        top: -50%;
+        left: 100%;
+        margin-left: 10px;
+        z-index: 3;
+      }
+
+      &:hover:after {
+        color: lightblue;
+      }
+    }
+  } 
+}
   
-  .notificationsFrame .content .item:hover {
-    color: #5f98cd;
-    cursor: pointer;
-  }
-  
-  .notificationsFrame .content .item .circle {
-    box-sizing: border-box;
-    position: absolute;
-    height: 11px;
-    width: 11px;
-    background: #fff;
-    border: 2px solid #5f98cd;
-    box-shadow: 0 0 0 3px #fff;
-    border-radius: 6px;
-    top: 0;
-    left: -20px;
-  }
-  
-  .notificationsFrame .content .item .avatar {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    vertical-align: top;
-    overflow: hidden;
-    left: -49px;
-  }
-  
-  .notificationsFrame .content .item .avatar img {
-    width: 100%;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  .notificationsFrame .content .item .time {
-    display: block;
-    font-size: 11px;
-    line-height: 11px;
-    margin-bottom: 2px;
-  }
-  
-  .notificationsFrame .content .item p {
-    font-size: 15px;
-    line-height: 20px;
-    margin: 0px 40px 0px 0px;
-    font-family: 'Open Sans', Lora, Times, no-serif;
-  }
-  
-  .notificationsFrame .content .item p b {
-    font-weight: 600;
-  }
-  
-  .notificationsFrame .content .item .right {
-    position: absolute;
-    right: 5px;
-    font-size: 11px;
-    top: 11px;
-  }
-  
-  .notificationsFrame .content .item .commentCount {
-    position: absolute;
-    right: 15px;
-    font-size: 12px;
-    top: 11px;
-  }
-  
-  .notificationsFrame .content .item .commentCount:after {
-    content: "\f075";
-    font-family: FontAwesome;
-    position: absolute;
-    font-size: 20px;
-    color: #ebebeb;
-    top: -50%;
-    left: 100%;
-    margin-left: 10px;
-    z-index: 3;
-  }
-  
-  .notificationsFrame .content .item .commentCount:hover:after {
-    color: lightblue;
-  }
-  
-  .notificationsFrame .footer {
+  .footer {
     position: relative;
-    background: #fff;
+    background: $color-white;
     margin: auto;
     height: 30px;
     border-top: 1px solid #eee;
     width: 100%;
     border-radius: 10px;
-  }
-  
-  .notificationsFrame .footer button {
-    background: #eee;
-    position: absolute;
-    width: 100%;
-    right: 0px;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    border: 0;
-  }
-  
-  .notificationsFrame .footer button i {
-    margin: 0 10px;
-  }
-  
-  
-  @media only screen and (min-width: 700px) and (max-width: 1000px){
-    .clock{
-      font-size: 50px;
+
+    button {
+      background: #eee;
+      position: absolute;
+      width: 100%;
+      right: 0px;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      border: 0;
+    }
+
+    i {
+      margin: 0 10px;
     }
   }
-  
-  @media only screen and (min-width: 500px) and (max-width: 699px){
-     .clock{
-      font-size: 45px;
-    }
-  }
-  
-  @media only screen and (min-width: 200px) and (max-width: 499px){
-     .clock{
-      font-size: 40px;
-    }
-  }
+}
+
   
